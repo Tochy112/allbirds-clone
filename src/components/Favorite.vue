@@ -104,6 +104,38 @@
         </div>
       </div>
     </div>
+
+    <!-- mobile view -->
+    <div class="mobile_view">
+      <swiper
+        :slidesPerView="3"
+        navigation
+        :spaceBetween="30"
+        :grabCursor="true"
+        :modules="modules"
+        class="mySwiper"
+      >
+        <div class="slider-navigation">
+          <div class="prevArrow">prev</div>
+          <div class="nextArrow">next</div>
+        </div>
+        <swiper-slide v-for="data in mobile_data" :key="data.id">
+          <div class="fav_box">
+            <div class="img">
+              <img :src="data.image" alt="images" />
+            </div>
+            <div class="text">
+              <h2>{{ data.header }}</h2>
+            </div>
+
+            <div class="para">
+              <img :src="data.icon" alt="icon" />
+              <p>{{ data.text }}</p>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper>
+    </div>
   </section>
 </template>
 
@@ -121,10 +153,29 @@ import img9 from "@/assets/favourite9.avif";
 import tree from "@/assets/Tree.jpg";
 import wool from "@/assets/Wool.jpg";
 
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import "swiper/css";
+
+import "swiper/css/pagination";
+
+import "swiper/css/navigation";
+
+// import required modules
+import { Navigation } from "swiper";
+
 export default {
   name: "Favorite",
   components: {
     Button,
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    return {
+      modules: [Navigation],
+    };
   },
   data() {
     return {
@@ -200,6 +251,72 @@ export default {
           text: "Classic Pacer",
         },
       ],
+
+      mobile_data: [
+        {
+          id: 1,
+          image: img1,
+          header: "Tree Runner",
+          icon: tree,
+          text: "Light and Breezy Sneaker",
+        },
+        {
+          id: 2,
+          image: img2,
+          header: "Tree Breezer",
+          icon: tree,
+          text: "Breezy Flat",
+        },
+        {
+          id: 3,
+          image: img3,
+          header: "Wool Runner",
+          icon: wool,
+          text: "Cozy Sneaker",
+        },
+        {
+          id: 4,
+          image: img4,
+          header: "Tree Dasher 2",
+          icon: tree,
+          text: "Comfy, Breezy, Everyday Runs",
+        },
+        {
+          id: 5,
+          image: img5,
+          header: "Golf Dasher",
+          icon: tree,
+          text: "stabilizing And Comfy For The Green",
+        },
+        {
+          id: 6,
+          image: img6,
+          header: "Tree Flyer",
+          icon: tree,
+          text: "Light, Bouncy, Long Distance Runs",
+        },
+        {
+          id: 7,
+          image: img7,
+          header: "Tree Lounger",
+          icon: tree,
+          text: "Breezy Slip-On",
+        },
+        {
+          id: 8,
+          image: img8,
+          header: "Allgood Cotton Tee",
+          icon: tree,
+          text: "Everyday organic Cotton T-Shirt",
+        },
+        {
+          id: 9,
+          image: img9,
+          header: "Plant pacer",
+          icon: wool,
+          text: "Classic Pacer",
+        },
+      ],
     };
   },
 };
@@ -249,6 +366,13 @@ export default {
 .container {
   display: flex;
   justify-content: space-between;
+}
+.swiper_slide {
+  display: flex !important;
+  justify-content: center;
+}
+.mobile_view {
+  display: none;
 }
 .img {
   width: 25rem;
@@ -356,6 +480,9 @@ export default {
 @media screen and (max-width: 995px) {
   .desktop-view {
     display: none;
+  }
+  .mobile_view {
+    display: block;
   }
 }
 </style>
