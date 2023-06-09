@@ -100,4 +100,12 @@ export default {
     color: #fff;
   }
 }
+@media screen and (max-width: 480px) {
+  .content_div {
+    padding: 11rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
 </style>

@@ -107,19 +107,19 @@
 
     <!-- mobile view -->
     <div class="mobile_view">
-      <swiper
-        :slidesPerView="3"
+      <Swiper
         navigation
-        :spaceBetween="30"
         :grabCursor="true"
         :modules="modules"
         class="mySwiper"
+        :slides-per-view="slidesPerView"
+        :breakpoints="swiperBreakpoints"
       >
         <div class="slider-navigation">
           <div class="prevArrow">prev</div>
           <div class="nextArrow">next</div>
         </div>
-        <swiper-slide v-for="data in mobile_data" :key="data.id">
+        <Swiper-slide v-for="data in mobile_data" :key="data.id">
           <div class="fav_box">
             <div class="img">
               <img :src="data.image" alt="images" />
@@ -132,9 +132,16 @@
               <img :src="data.icon" alt="icon" />
               <p>{{ data.text }}</p>
             </div>
+
+            <div class="child-box">
+              <div class="btn-div">
+                <Button content="SHOP MEN" />
+                <Button content="SHOP WOMEN" />
+              </div>
+            </div>
           </div>
-        </swiper-slide>
-      </swiper>
+        </Swiper-slide>
+      </Swiper>
     </div>
   </section>
 </template>
@@ -180,6 +187,24 @@ export default {
   data() {
     return {
       activePort: "firstSet",
+      slidesPerView: 1, // Default number of slides per view
+      swiperBreakpoints: {
+        // Define breakpoints and corresponding slides per view
+        0: {
+          slidesPerView: 1,
+        },
+        414: {
+          slidesPerView: 1.1,
+        },
+        480: {
+          slidesPerView: 2,
+          spaceBetween: 27,
+        },
+        820: {
+          slidesPerView: 2.1,
+          spaceBetween: 30,
+        },
+      },
       favourites1: [
         {
           id: 1,
@@ -367,10 +392,6 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-.swiper_slide {
-  display: flex !important;
-  justify-content: center;
-}
 .mobile_view {
   display: none;
 }
@@ -481,8 +502,52 @@ export default {
   .desktop-view {
     display: none;
   }
+  .clickable_slide {
+    display: none;
+  }
+  .scroll_div {
+    display: none;
+  }
   .mobile_view {
     display: block;
+  }
+  .fav_box {
+    width: 21.5rem;
+    height: 28rem;
+  }
+  .img {
+    width: 21.5rem;
+    height: 20rem;
+  }
+  .child-box {
+    background-color: rgba(51, 51, 51, 0.5);
+    width: 21.5rem;
+    height: 20rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .favorite_section {
+    padding: 0 1rem;
+    background-color: #fefefe;
+  }
+  .favorite_section h1 {
+    text-align: center;
+    color: #212a2f;
+    font-size: 2rem;
+    padding: 2rem 0;
+  }
+  .fav_box {
+    width: 20rem;
+    height: 27rem;
+  }
+  .img {
+    width: 20rem;
+    height: 20rem;
+  }
+  .child-box {
+    background-color: rgba(51, 51, 51, 0.5);
+    width: 20rem;
+    height: 20rem;
   }
 }
 </style>

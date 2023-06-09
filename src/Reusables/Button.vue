@@ -15,8 +15,8 @@ export default {
 
 <style scoped>
 button {
-  width: 190px;
-  height: 50px;
+  width: 10rem;
+  height: 3rem;
   padding: 0 1rem;
   font-weight: 545;
   color: #212a2f;
@@ -31,5 +31,11 @@ button:hover {
   color: #fff;
   border-radius: 3px;
   border: 5px #212a2f;
+}
+@media screen and (max-width: 320px) {
+  button {
+    width: 9rem;
+    height: 3rem;
+  }
 }
 </style>
