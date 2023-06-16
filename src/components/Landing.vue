@@ -8,8 +8,8 @@
         </p>
 
         <div class="btn_div">
-          <Button content="SHOP MEN" />
-          <Button content=" SHOP WOMEN" />
+          <Button content="SHOP MEN" width="10rem" />
+          <Button content=" SHOP WOMEN" width="10rem" />
         </div>
       </div>
     </div>
@@ -17,7 +17,7 @@
       <p>
         <b>Discover Your Perfect Pair</b> Try our Style Quiz to find the best
         pair for you.
-        <a href="/">Take the Style Quiz</a>
+        <a href="#">Take the Style Quiz</a>
       </p>
     </div>
   </section>

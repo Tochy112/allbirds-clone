@@ -94,4 +94,16 @@ export default {
   display: block;
   transform: scale(100.5%);
 }
+/* 
+@media screen and (max-width: 995) {
+  .child-box {
+    background-color: #fff;
+    width: 25rem;
+    height: 24rem;
+    position: relative;
+    left: 0rem;
+    top: 0rem;
+    display: none;
+  }
+} */
 </style>

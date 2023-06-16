@@ -36,8 +36,8 @@
 
             <div class="child-box">
               <div class="btn-div">
-                <Button content="SHOP MEN" />
-                <Button content="SHOP WOMEN" />
+                <Button content="SHOP MEN" width="10rem" />
+                <Button content="SHOP WOMEN" width="10rem" />
               </div>
             </div>
           </div>
@@ -66,8 +66,8 @@
 
             <div class="child-box">
               <div class="btn-div">
-                <Button content="SHOP MEN" />
-                <Button content="SHOP WOMEN" />
+                <Button content="SHOP MEN" width="10rem" />
+                <Button content="SHOP WOMEN" width="10rem" />
               </div>
             </div>
           </div>
@@ -94,10 +94,10 @@
               <p>{{ favourite.text }}</p>
             </div>
 
-            <div class="child-box">
+            <div class="child-box" id="child-box">
               <div class="btn-div">
-                <Button content="SHOP MEN" />
-                <Button content="SHOP WOMEN" />
+                <Button content="SHOP MEN" width="10rem" />
+                <Button content="SHOP WOMEN" width="10rem" />
               </div>
             </div>
           </div>
@@ -128,15 +128,28 @@
               <h2>{{ data.header }}</h2>
             </div>
 
-            <div class="para">
-              <img :src="data.icon" alt="icon" />
-              <p>{{ data.text }}</p>
-            </div>
-
-            <div class="child-box">
-              <div class="btn-div">
-                <Button content="SHOP MEN" />
-                <Button content="SHOP WOMEN" />
+            <div class="swipe">
+              <div class="para">
+                <img :src="data.icon" alt="icon" />
+                <p>{{ data.text }}</p>
+              </div>
+              <div class="child-box">
+                <div class="btn-div">
+                  <Button
+                    content="SHOP MEN"
+                    id="btn"
+                    width="100%"
+                    bgcolor="#212a2f"
+                    color="#fff"
+                  />
+                  <Button
+                    content="SHOP WOMEN"
+                    id="btn"
+                    width="100%"
+                    bgcolor="#212a2f"
+                    color="#fff"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -192,17 +205,15 @@ export default {
         // Define breakpoints and corresponding slides per view
         0: {
           slidesPerView: 1,
+          // spaceBetween: 20,
         },
-        414: {
+        720: {
           slidesPerView: 1.1,
-        },
-        480: {
-          slidesPerView: 2,
-          spaceBetween: 27,
+          // spaceBetween: 20,
         },
         820: {
           slidesPerView: 2.1,
-          spaceBetween: 30,
+          // spaceBetween: 20,
         },
       },
       favourites1: [
@@ -371,8 +382,6 @@ export default {
   position: relative;
 }
 .scroll_div {
-  /* background-color: red; */
-  /* padding: 1rem; */
   display: flex;
   gap: 7rem;
   margin: 0 2rem;
@@ -426,28 +435,6 @@ export default {
 .para img {
   width: 2rem;
 }
-.child-box {
-  background-color: rgba(51, 51, 51, 0.5);
-  width: 25rem;
-  height: 24rem;
-  position: absolute;
-  left: 0rem;
-  top: 0rem;
-  display: none;
-}
-.child-box .btn-div {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: 35% auto;
-  gap: 10px;
-}
-
-.fav_box:hover .child-box,
-.fav_box:hover .img img {
-  display: block;
-  transform: scale(100.5%);
-}
 
 /* media query */
 @media screen and (max-width: 1300px) {
@@ -465,6 +452,7 @@ export default {
     height: 24rem;
   }
 }
+
 @media screen and (max-width: 1220px) {
   .fav_box {
     width: 21rem;
@@ -496,7 +484,30 @@ export default {
     height: 20rem;
   }
 }
+@media screen and (min-width: 996px) {
+  .child-box {
+    background-color: rgba(51, 51, 51, 0.5);
+    width: 25rem;
+    height: 24rem;
+    position: absolute;
+    left: 0rem;
+    top: 0rem;
+    display: none;
+  }
+  .child-box .btn-div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 35% auto;
+    gap: 10px;
+  }
 
+  .fav_box:hover .child-box,
+  .fav_box:hover .img img {
+    display: block;
+    transform: scale(100.5%);
+  }
+}
 /* mobile view */
 @media screen and (max-width: 995px) {
   .desktop-view {
@@ -511,21 +522,6 @@ export default {
   .mobile_view {
     display: block;
   }
-  .fav_box {
-    width: 21.5rem;
-    height: 28rem;
-  }
-  .img {
-    width: 21.5rem;
-    height: 20rem;
-  }
-  .child-box {
-    background-color: rgba(51, 51, 51, 0.5);
-    width: 21.5rem;
-    height: 20rem;
-  }
-}
-@media screen and (max-width: 480px) {
   .favorite_section {
     padding: 0 1rem;
     background-color: #fefefe;
@@ -537,17 +533,53 @@ export default {
     padding: 2rem 0;
   }
   .fav_box {
-    width: 20rem;
-    height: 27rem;
+    width: 23rem;
+    height: 44rem;
   }
   .img {
-    width: 20rem;
-    height: 20rem;
+    width: 23rem;
+    height: 27rem;
   }
   .child-box {
-    background-color: rgba(51, 51, 51, 0.5);
-    width: 20rem;
-    height: 20rem;
+    background: none;
+    padding: 0 1rem;
+    margin: auto;
+    height: max-content;
+    width: 100%;
+  }
+  .child-box .btn-div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .child-box .btn-div #btn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 819px) {
+  .favorite_section {
+    padding: 0 2rem;
+    background-color: #fefefe;
+  }
+  .fav_box {
+    width: 75vw;
+  }
+  .img {
+    width: 75vw;
+  }
+}
+@media screen and (max-width: 520px) {
+  .favorite_section {
+    padding: 0 1rem;
+    background-color: #fefefe;
+  }
+  .fav_box {
+    width: 90vw;
+  }
+  .img {
+    width: 90vw;
   }
 }
 </style>

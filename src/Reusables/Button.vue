@@ -1,6 +1,8 @@
 <template>
   <div class="button_div">
-    <button>{{ content }}</button>
+    <button :style="{ width: width, backgroundColor: bgcolor, color: color }">
+      {{ content }}
+    </button>
   </div>
 </template>
 
@@ -9,13 +11,17 @@ export default {
   name: "Button",
   props: {
     content: String,
+    width: String,
+    bgcolor: String,
+    color: String,
   },
 };
 </script>
 
 <style scoped>
 button {
-  width: 10rem;
+  /* width: 10rem; */
+  /* max-width: 100vw; */
   height: 3rem;
   padding: 0 1rem;
   font-weight: 545;
@@ -25,6 +31,7 @@ button {
   transition: background-color 0.1s ease-in-out;
   cursor: pointer;
   border: 5px #fff;
+  margin: 0 auto;
 }
 button:hover {
   background-color: #212a2f;
@@ -34,7 +41,7 @@ button:hover {
 }
 @media screen and (max-width: 320px) {
   button {
-    width: 9rem;
+    width: 8.5rem;
     height: 3rem;
   }
 }
