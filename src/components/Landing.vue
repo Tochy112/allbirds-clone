@@ -2,9 +2,9 @@
   <section class="landing_section">
     <div class="img_div">
       <div class="content_div">
-        <h1>Longer Days, Lighter Shoes</h1>
+        <h1>Feel The Breeze</h1>
         <p>
-          Give your feet some fresh air in styles made with eucalyptus fiber.
+          Eucalyptus fiber is lightweight and like an iced tea for your feet.
         </p>
 
         <div class="btn_div">
@@ -38,7 +38,7 @@ export default {
   overflow-x: hidden !important;
 }
 .img_div {
-  background-image: url("../assets/landing_right.jpg");
+  background-image: url("../assets/landing_right.avif");
   width: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
@@ -93,7 +93,7 @@ export default {
 }
 @media screen and (max-width: 820px) {
   .img_div {
-    background-image: url("../assets/Landing_page.PNG");
+    background-image: url("../assets/landing_mobile.jpg");
   }
   .content_div h1 {
     font-size: 2rem;

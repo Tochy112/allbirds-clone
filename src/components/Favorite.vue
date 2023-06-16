@@ -108,7 +108,7 @@
     <!-- mobile view -->
     <div class="mobile_view">
       <Swiper
-        navigation
+        :navigation="{ nextEl: '.nextArrow', prevEl: '.prevArrow' }"
         :grabCursor="true"
         :modules="modules"
         class="mySwiper"
@@ -116,8 +116,12 @@
         :breakpoints="swiperBreakpoints"
       >
         <div class="slider-navigation">
-          <div class="prevArrow">prev</div>
-          <div class="nextArrow">next</div>
+          <div class="nav-indicator prevArrow">
+            <img src="@/assets/left-arrow.png" alt="prev" />
+          </div>
+          <div class="nav-indicator nextArrow">
+            <img src="@/assets/right-arrow.png" alt="next" />
+          </div>
         </div>
         <Swiper-slide v-for="data in mobile_data" :key="data.id">
           <div class="fav_box">
@@ -161,10 +165,10 @@
 
 <script>
 import Button from "@/Reusables/Button.vue";
-import img1 from "@/assets/favourite1.avif";
-import img2 from "@/assets/favourite2.avif";
-import img3 from "@/assets/favourite3.avif";
-import img4 from "@/assets/favourite4.avif";
+import img1 from "@/assets/summer0.jpg";
+import img2 from "@/assets/summer1.jpg";
+import img3 from "@/assets/summer3.jpg";
+import img4 from "@/assets/summer2.jpg";
 import img5 from "@/assets/favourite5.avif";
 import img6 from "@/assets/favourite6.avif";
 import img7 from "@/assets/favourite7.avif";
@@ -207,8 +211,8 @@ export default {
           slidesPerView: 1,
           // spaceBetween: 20,
         },
-        720: {
-          slidesPerView: 1.1,
+        521: {
+          slidesPerView: 1.3,
           // spaceBetween: 20,
         },
         820: {
@@ -234,7 +238,7 @@ export default {
         {
           id: 3,
           image: img3,
-          header: "Wool Runner",
+          header: "Tree Lounger",
           icon: wool,
           text: "Cozy Sneaker",
         },
@@ -306,7 +310,7 @@ export default {
         {
           id: 3,
           image: img3,
-          header: "Wool Runner",
+          header: "Tree Lounger",
           icon: wool,
           text: "Cozy Sneaker",
         },
@@ -362,6 +366,7 @@ export default {
 .favorite_section {
   padding: 3rem;
   background-color: #fefefe;
+  margin-bottom: 3rem;
 }
 .favorite_section h1 {
   text-align: center;
@@ -436,7 +441,7 @@ export default {
   width: 2rem;
 }
 
-/* media query */
+/* MEDIA QUERY */
 @media screen and (max-width: 1300px) {
   .fav_box {
     width: 23rem;
@@ -448,7 +453,6 @@ export default {
   }
   .child-box {
     background-color: rgba(51, 51, 51, 0.5);
-    width: 23rem;
     height: 24rem;
   }
 }
@@ -464,31 +468,29 @@ export default {
   }
   .child-box {
     background-color: rgba(51, 51, 51, 0.5);
-    width: 21rem;
     height: 22rem;
   }
 }
 
 @media screen and (max-width: 1120px) {
   .fav_box {
-    width: 18.5rem;
-    height: 28rem;
+    width: 19rem;
+    height: 27rem;
   }
   .img {
-    width: 18.5rem;
-    height: 20rem;
+    width: 19rem;
+    height: 18rem;
   }
   .child-box {
     background-color: rgba(51, 51, 51, 0.5);
-    width: 18.5rem;
-    height: 20rem;
+    height: 18rem;
   }
 }
+
 @media screen and (min-width: 996px) {
   .child-box {
     background-color: rgba(51, 51, 51, 0.5);
-    width: 25rem;
-    height: 24rem;
+    width: 100%;
     position: absolute;
     left: 0rem;
     top: 0rem;
@@ -508,7 +510,8 @@ export default {
     transform: scale(100.5%);
   }
 }
-/* mobile view */
+
+/* MOBILE VIEW */
 @media screen and (max-width: 995px) {
   .desktop-view {
     display: none;
@@ -533,12 +536,12 @@ export default {
     padding: 2rem 0;
   }
   .fav_box {
-    width: 23rem;
-    height: 44rem;
+    width: 22rem;
+    height: 33.5rem;
   }
   .img {
-    width: 23rem;
-    height: 27rem;
+    width: 22rem;
+    height: 18rem;
   }
   .child-box {
     background: none;
@@ -556,6 +559,25 @@ export default {
   .child-box .btn-div #btn {
     width: 100%;
   }
+
+  .slider-navigation {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 19rem;
+    z-index: 10;
+  }
+  .nav-indicator {
+    cursor: pointer;
+    margin: 0 0.3rem;
+    background-color: rgb(255, 255, 255, 0.85);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+  }
+  .nav-indicator img {
+    width: 40px;
+  }
 }
 
 @media screen and (max-width: 819px) {
@@ -564,10 +586,12 @@ export default {
     background-color: #fefefe;
   }
   .fav_box {
-    width: 75vw;
+    width: 60vw;
+    height: 36rem;
   }
   .img {
-    width: 75vw;
+    width: 60vw;
+    height: 20rem;
   }
 }
 @media screen and (max-width: 520px) {
