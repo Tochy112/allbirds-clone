@@ -1,8 +1,6 @@
 <template>
   <div class="summer_section">
-    <div class="summer_img_div">
-      <img src="@/assets/summer-trip1.jpg" alt="" />
-    </div>
+    <div class="summer_img_div"></div>
   </div>
 </template>
 
@@ -17,12 +15,18 @@ export default {
   padding: 3rem 0;
 }
 .summer_img_div {
-  width: max-content;
-  height: max-content;
+  background-image: url(@/assets/summer-trip1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 90vh;
   overflow-x: hidden;
 }
-.summer_img_div img {
-  width: 100vw;
-  /* height: 38rem; */
+
+@media screen and (max-width: 520px) {
+  .summer_img_div {
+    height: 50vh;
+  }
 }
 </style>

@@ -366,7 +366,7 @@ export default {
 .favorite_section {
   padding: 3rem;
   background-color: #fefefe;
-  margin-bottom: 3rem;
+  /* margin-bottom: 1rem; */
 }
 .favorite_section h1 {
   text-align: center;
