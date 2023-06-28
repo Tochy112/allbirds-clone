@@ -159,7 +159,7 @@ export default {
           id: 6,
           image: img6,
           header: "The SuperLight Collection",
-          text: "Barely-there feel",
+          text: "Barely-there feel. Light-as-air fit. Meet",
         },
         {
           id: 7,
