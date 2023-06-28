@@ -120,7 +120,7 @@ export default {
         },
         1260: {
           slidesPerView: 3.1,
-          spaceBetween: 20,
+          spaceBetween: 30,
         },
       },
 
@@ -152,14 +152,14 @@ export default {
         {
           id: 5,
           image: img5,
-          header: "Golf Dasher",
-          text: "stabilizing And Comfy For The Green",
+          header: "The SuperLight Collection",
+          text: "Barely-there feel. Light-as-air fit. Meet our lightest and lowest carbon footprint to date.",
         },
         {
           id: 6,
           image: img6,
-          header: "The SuperLight Collection",
-          text: "Barely-there feel. Light-as-air fit. Meet",
+          header: "The Running Shop",
+          text: "Break a sweat, not the planet in our running shoes, trail shoes, and performance apparel- all made with a mix of sustainable materials.",
         },
         {
           id: 7,
@@ -208,6 +208,7 @@ export default {
   height: 30rem;
   background-color: #fff;
   box-shadow: rgb(51, 51, 51, 0.5) 5px 0 9px 0px;
+  padding-bottom: 2rem;
 }
 .sum_box img {
   width: 23rem;
@@ -235,11 +236,15 @@ export default {
 .nav-indicator img {
   width: 40px;
 }
+.description {
+  padding: 0 1rem;
+}
 
 @media screen and (min-width: 1025px) {
   .sum_box {
     width: 25rem;
-    height: 30rem;
+    height: 32rem;
+    /* padding-bottom: 2rem; */
   }
   .sum_box img {
     width: 25rem;
@@ -250,7 +255,7 @@ export default {
 @media screen and (max-width: 995px) {
   .sum_box {
     width: 22rem;
-    height: 30rem;
+    height: 32rem;
   }
   .sum_box img {
     width: 22rem;
@@ -260,7 +265,7 @@ export default {
 @media screen and (max-width: 819px) {
   .sum_box {
     width: 60vw;
-    height: 30rem;
+    height: 32rem;
   }
   .sum_box img {
     width: 60vw;
