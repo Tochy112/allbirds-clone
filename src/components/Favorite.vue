@@ -364,7 +364,7 @@ export default {
 
 <style scoped>
 .favorite_section {
-  padding: 3rem;
+  padding: 1rem 3rem;
   background-color: #fefefe;
   /* margin-bottom: 1rem; */
 }

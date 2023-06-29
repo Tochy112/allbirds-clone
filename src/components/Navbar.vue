@@ -11,7 +11,7 @@
         <li><router-link to="/men">MEN</router-link></li>
         <li><router-link to="/">WOMEN</router-link></li>
         <li><router-link to="/">KIDS</router-link></li>
-        <li><router-link to="/">NEW ARRIVALS</router-link></li>
+        <li><router-link to="/">ARRIVALS</router-link></li>
         <li><router-link to="/">SALE</router-link></li>
       </ul>
       <div class="img_div">
@@ -65,11 +65,17 @@ nav {
   background-color: #fff;
   margin: auto 0;
   padding: 10px;
+  overflow-x: scroll;
+}
+.Navbar::-webkit-scrollbar {
+  width: 2rem;
 }
 nav ul {
   display: flex;
-  gap: 30px;
+  gap: 2rem;
   margin: 0 20px;
+  align-items: center;
+  text-align: center;
 }
 nav ul li {
   list-style: none;
