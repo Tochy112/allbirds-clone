@@ -253,7 +253,7 @@ export default {
 @media screen and (max-width: 995px) {
   .sum_box {
     width: 22rem;
-    height: 32rem;
+    height: 34rem;
   }
   .sum_box img {
     width: 22rem;
@@ -263,7 +263,7 @@ export default {
 @media screen and (max-width: 861px) {
   .sum_box {
     width: 60vw;
-    height: 32rem;
+    height: 33rem;
   }
   .sum_box img {
     width: 60vw;
