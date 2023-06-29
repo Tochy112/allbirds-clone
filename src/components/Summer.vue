@@ -14,18 +14,20 @@
           width="10rem"
           bgcolor="#212a2f"
           color="#fff"
+          class="btn"
         />
         <Button
           content="SHOP WOMEN"
           width="10rem"
           bgcolor="#212a2f"
           color="#fff"
+          class="btn"
         />
       </div>
     </div>
 
     <div class="slide-secton">
-      <h2>Shop The Collections</h2>
+      <h2 class="title">Shop The Collections</h2>
 
       <div class="mobile_view">
         <Swiper
@@ -104,18 +106,18 @@ export default {
         // Define breakpoints and corresponding slides per view
         0: {
           slidesPerView: 1,
-          // spaceBetween: 20,
+          spaceBetween: 10,
         },
         521: {
           slidesPerView: 1.4,
           // spaceBetween: 20,
         },
-        820: {
-          slidesPerView: 2.2,
+        860: {
+          slidesPerView: 2.1,
           // spaceBetween: 20,
         },
         960: {
-          slidesPerView: 2.5,
+          slidesPerView: 2.3,
           // spaceBetween: 10,
         },
         1260: {
@@ -164,8 +166,8 @@ export default {
         {
           id: 7,
           image: img7,
-          header: "Tree Lounger",
-          text: "Breezy Slip-On",
+          header: "Best For Adventure",
+          text: "The window for adventure is wide open. We've got things to help you hit the trials, pitvh the tents, and road the trips",
         },
       ],
     };
@@ -189,6 +191,9 @@ export default {
 .slide-secton {
   padding: 0 3rem;
 }
+.slide-secton .title {
+  margin: 2rem 1rem;
+}
 .intro-section {
   text-align: center;
   margin: 4rem 0;
@@ -205,7 +210,7 @@ export default {
 }
 .sum_box {
   width: 23rem;
-  height: 30rem;
+  height: 32rem;
   background-color: #fff;
   box-shadow: rgb(51, 51, 51, 0.5) 5px 0 9px 0px;
   padding-bottom: 2rem;
@@ -228,13 +233,14 @@ export default {
 .nav-indicator {
   cursor: pointer;
   margin: 0 0.3rem;
-  background-color: rgb(255, 255, 255, 0.85);
+  /* background-color: rgb(255, 255, 255, 0.85); */
   border-radius: 50%;
-  height: 40px;
-  width: 40px;
+  width: 5rem;
+  height: 5rem;
 }
 .nav-indicator img {
-  width: 40px;
+  width: 5rem;
+  height: 5rem;
 }
 .description {
   padding: 0 1rem;
@@ -262,7 +268,7 @@ export default {
     height: 22rem;
   }
 }
-@media screen and (max-width: 819px) {
+@media screen and (max-width: 861px) {
   .sum_box {
     width: 60vw;
     height: 32rem;
@@ -272,7 +278,7 @@ export default {
     height: 20rem;
   }
   .slide-secton {
-    padding: 0 1rem;
+    padding: 0 2rem;
   }
 }
 @media screen and (max-width: 520px) {
@@ -284,6 +290,32 @@ export default {
   }
   .sum_box img {
     width: 90vw;
+  }
+  .slide-secton {
+    padding: 0 1rem;
+  }
+  .intro-section h1 {
+    font-size: 1.8rem;
+    margin: 0 0.1rem;
+  }
+  .intro-section .btn-div {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    /* margin: 1rem 0; */
+  }
+
+  @media screen and (max-width: 320px) {
+    .intro-section .btn-div {
+      display: flex;
+      justify-content: center;
+      gap: 0.2rem;
+      margin: 0 2rem;
+    }
+    .intro-section .btn-div .btn {
+      /* width: 3rem; */
+      margin: 0;
+    }
   }
 }
 </style>

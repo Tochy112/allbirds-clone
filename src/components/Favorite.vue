@@ -564,19 +564,20 @@ export default {
     display: flex;
     justify-content: space-between;
     position: relative;
-    bottom: 19rem;
+    bottom: 20.5rem;
     z-index: 10;
   }
   .nav-indicator {
     cursor: pointer;
-    margin: 0 0.3rem;
-    background-color: rgb(255, 255, 255, 0.85);
+    margin: 0 0.3rem 5rem 0.3rem;
+    /* background-color: rgb(255, 255, 255, 0.85); */
     border-radius: 50%;
-    height: 40px;
-    width: 40px;
+    width: 5rem;
+    height: 5rem;
   }
   .nav-indicator img {
-    width: 40px;
+    width: 5rem;
+    height: 5rem;
   }
 }
 
