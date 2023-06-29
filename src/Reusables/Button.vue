@@ -1,6 +1,13 @@
 <template>
   <div class="button_div">
-    <button :style="{ width: width, backgroundColor: bgcolor, color: color }">
+    <button
+      :style="{
+        width: width,
+        backgroundColor: bgcolor,
+        color: color,
+        hover: hover,
+      }"
+    >
       {{ content }}
     </button>
   </div>
@@ -14,6 +21,7 @@ export default {
     width: String,
     bgcolor: String,
     color: String,
+    hover: String,
   },
 };
 </script>

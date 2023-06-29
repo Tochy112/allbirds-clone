@@ -3,10 +3,7 @@
     <div class="summer_img_div"></div>
 
     <div class="intro-section">
-      <h1>
-        Summer Trips Need Super Packable <br />
-        Shoes
-      </h1>
+      <h1>Summer Trips Need Super Packable Shoes</h1>
       <p>We’ve got your 10,000 steps covered, easy.</p>
       <div class="btn-div">
         <Button
@@ -14,14 +11,14 @@
           width="10rem"
           bgcolor="#212a2f"
           color="#fff"
-          class="btn"
+          id="btn"
         />
         <Button
           content="SHOP WOMEN"
           width="10rem"
           bgcolor="#212a2f"
           color="#fff"
-          class="btn"
+          id="btn"
         />
       </div>
     </div>
@@ -177,7 +174,7 @@ export default {
 
 <style scoped>
 .summer_section {
-  padding: 3rem 0;
+  padding: 1rem 0;
 }
 .summer_img_div {
   background-image: url(@/assets/summer-trip1.jpg);
@@ -192,7 +189,7 @@ export default {
   padding: 0 3rem;
 }
 .slide-secton .title {
-  margin: 2rem 1rem;
+  margin: 2rem 0.5rem;
 }
 .intro-section {
   text-align: center;
@@ -227,7 +224,8 @@ export default {
   display: flex;
   justify-content: space-between;
   position: relative;
-  bottom: 19rem;
+  align-items: center;
+  bottom: 18rem;
   z-index: 10;
 }
 .nav-indicator {
@@ -235,7 +233,7 @@ export default {
   margin: 0 0.3rem;
   /* background-color: rgb(255, 255, 255, 0.85); */
   border-radius: 50%;
-  width: 5rem;
+  width: max-content;
   height: 5rem;
 }
 .nav-indicator img {
@@ -244,6 +242,12 @@ export default {
 }
 .description {
   padding: 0 1rem;
+}
+.intro-section .btn-div #btn:hover {
+  background-color: "#fff" !important;
+  color: " #212a2f";
+  border-radius: "3px";
+  border: "5px #212a2f";
 }
 
 @media screen and (min-width: 1025px) {
@@ -296,7 +300,7 @@ export default {
   }
   .intro-section h1 {
     font-size: 1.8rem;
-    margin: 0 0.1rem;
+    margin: 0 1rem;
   }
   .intro-section .btn-div {
     display: flex;
@@ -312,7 +316,7 @@ export default {
       gap: 0.2rem;
       margin: 0 2rem;
     }
-    .intro-section .btn-div .btn {
+    .intro-section .btn-div #btn {
       /* width: 3rem; */
       margin: 0;
     }

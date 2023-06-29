@@ -563,16 +563,17 @@ export default {
   .slider-navigation {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: relative;
     bottom: 20.5rem;
     z-index: 10;
+    /* margin: 0 !important; */
   }
   .nav-indicator {
     cursor: pointer;
-    margin: 0 0.3rem 5rem 0.3rem;
     /* background-color: rgb(255, 255, 255, 0.85); */
     border-radius: 50%;
-    width: 5rem;
+    width: max-content;
     height: 5rem;
   }
   .nav-indicator img {
