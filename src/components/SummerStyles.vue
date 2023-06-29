@@ -222,7 +222,7 @@ export default {
   /* background-color: rgb(255, 255, 255, 0.85); */
   border-radius: 50%;
   width: max-content;
-  height: 5rem;
+  height: max-content;
 }
 .nav-indicator img {
   width: 5rem;
