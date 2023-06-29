@@ -263,7 +263,7 @@ export default {
 @media screen and (max-width: 861px) {
   .sum_box {
     width: 60vw;
-    height: 33rem;
+    height: 34rem;
   }
   .sum_box img {
     width: 60vw;
