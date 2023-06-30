@@ -86,7 +86,7 @@
         </div>
 
         <div class="certified">
-          <img src="@/assets/icon-b-corp.svg" alt="icons" />
+          <img src="@/assets/corp-logo.svg" alt="icons" />
         </div>
 
         <div class="flag-div">
@@ -155,6 +155,12 @@ export default {
 }
 .footer-header .policy {
   font-size: small;
+}
+.certified img {
+  width: 8rem;
+  height: 8rem;
+  color: #fff;
+  background: #fff;
 }
 .copyright {
   text-align: center;
