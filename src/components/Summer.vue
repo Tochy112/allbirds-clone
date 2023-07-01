@@ -1,5 +1,5 @@
 <template>
-  <div class="summer_section">
+  <section class="summer_section">
     <div class="summer_img_div"></div>
 
     <div class="intro-section">
@@ -60,7 +60,7 @@
         </Swiper>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

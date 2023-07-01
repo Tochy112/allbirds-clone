@@ -1,5 +1,5 @@
 <template>
-  <div class="summer-style-intro">
+  <section class="summer-style-intro">
     <div class="summer-style-bg"></div>
     <div class="intro-section">
       <h1>Summer Styles</h1>
@@ -59,7 +59,7 @@
         </Swiper>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 <script>
 import Button from "@/Reusables/Button";

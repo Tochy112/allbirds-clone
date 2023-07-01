@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import Men from "../views/Men.vue";
 
 const routes = [
   {
@@ -8,11 +7,11 @@ const routes = [
     name: "home",
     component: HomeView,
   },
-  {
-    path: "/men",
-    name: "men",
-    component: Men,
-  },
+  // {
+  //   path: "/men",
+  //   name: "men",
+  //   component: Men,
+  // },
 ];
 
 // route level code-splitting

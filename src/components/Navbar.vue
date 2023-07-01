@@ -28,7 +28,7 @@
         </li>
         <li>
           <router-link to="/">
-            <img src="../assets/serach-icon.svg" alt="search-icon" />
+            <!-- <img src="../assets/serach-icon.svg" alt="search-icon" /> -->
           </router-link>
         </li>
         <li>

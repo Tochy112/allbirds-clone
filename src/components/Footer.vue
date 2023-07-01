@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <section class="footer">
     <div class="footer-header">
       <h1>Want First Dibs?</h1>
       <p>
@@ -109,7 +109,7 @@
         <p><a href="#">Do Not Sell My Personal Information</a></p>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
