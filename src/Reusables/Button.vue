@@ -28,8 +28,6 @@ export default {
 
 <style scoped>
 button {
-  /* width: 10rem; */
-  /* max-width: 100vw; */
   height: 3rem;
   padding: 0 1rem;
   font-weight: 545;
