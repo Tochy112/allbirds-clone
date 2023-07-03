@@ -1,5 +1,5 @@
 <template>
-  <div class="Navbar">
+  <header class="Navbar">
     <div class="ad">
       <p>
         The palm Springs Collecton Is Here. <a href="/">Shop Men</a>|
@@ -7,17 +7,28 @@
       </p>
     </div>
     <nav>
-      <ul class="first_list">
+      <div
+        id="hamburger"
+        @click="toggleMobileNav"
+        v-show="mobile"
+        :class="{ 'icon-active': mobileNav }"
+      >
+        menu
+      </div>
+
+      <ul class="first_list" v-show="!mobile">
         <li><router-link to="/men">MEN</router-link></li>
         <li><router-link to="/">WOMEN</router-link></li>
         <li><router-link to="/">KIDS</router-link></li>
         <li><router-link to="/">ARRIVALS</router-link></li>
         <li><router-link to="/">SALE</router-link></li>
       </ul>
-      <div class="img_div">
+
+      <div class="img_div branding">
         <img src="@/assets/allbirds-logo.svg" alt="allbirds" />
       </div>
-      <ul class="second_list">
+
+      <ul class="second_list" v-show="!mobile">
         <li><router-link to="/">SUSTAINABILITY</router-link></li>
         <li><router-link to="/">RERUN</router-link></li>
         <li><router-link to="/">STORES</router-link></li>
@@ -35,15 +46,49 @@
           <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
         </li>
       </ul>
+
+      <div class="mobile-icons" v-show="mobile">
+        <li>
+          <router-link to="/">
+            <img src="../assets/serach-icon.svg" alt="search-icon" />
+          </router-link>
+        </li>
+      </div>
     </nav>
-  </div>
+
+    <!-- mobile navigation -->
+    <transition name="mobile-nav">
+      <ul class="dropdown-nav" v-show="mobileNav">
+        <li><router-link to="/men">MEN</router-link></li>
+        <li><router-link to="/">WOMEN</router-link></li>
+        <li><router-link to="/">KIDS</router-link></li>
+        <li><router-link to="/">ARRIVALS</router-link></li>
+        <li><router-link to="/">SALE</router-link></li>
+        <li><router-link to="/">SUSTAINABILITY</router-link></li>
+        <li><router-link to="/">RERUN</router-link></li>
+        <li><router-link to="/">STORES</router-link></li>
+      </ul>
+    </transition>
+  </header>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: "Navbar",
   props: {
     msg: String,
+  },
+  data() {
+    return {
+      mobile: false,
+      windowWidth: null,
+      mobileNav: false,
+    };
+  },
+  methods: {
+    toggleMobileNav(mobileNav) {
+      this.mobileNav = mobileNav;
+    },
   },
 };
 </script>
@@ -52,6 +97,7 @@ export default {
 /* nav a.router-link-exact-active {
   color: #42b983;
 } */
+
 .Navbar {
   position: fixed;
   width: 100%;
@@ -107,5 +153,31 @@ li a img {
   color: #fff;
   text-decoration: underline;
   margin-right: 5px;
+}
+
+/* mobile styling */
+#hamburger {
+  transition: 0.8s ease all;
+}
+.icon-active {
+  transform: rotate(180deg);
+}
+.dropdown-nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 10px;
+  gap: 2rem;
+  width: 100vw;
+  height: 100vh;
+}
+.dropdown-nav li {
+  margin-left: 1rem;
+  border-bottom: 1px solid #212a2f;
+  list-style: none;
+}
+.dropdown-nav li a {
+  color: #212a2f;
+  text-decoration: none;
 }
 </style>
