@@ -1,6 +1,6 @@
 <template>
   <header class="Navbar">
-    <div class="ad">
+    <div class="ad" v-show="scrollAd">
       <p>
         The palm Springs Collecton Is Here. <a href="/">Shop Men</a>|
         <a href="/">Shop Women</a>
@@ -13,7 +13,7 @@
         v-show="mobile"
         :class="{ 'icon-active': mobileNav }"
       >
-        menu
+        <i class="fa-solid fa-bars" style="color: #212a24"></i>
       </div>
 
       <ul class="first_list" v-show="!mobile">
@@ -21,7 +21,7 @@
         <li><router-link to="/">WOMEN</router-link></li>
         <li><router-link to="/">KIDS</router-link></li>
         <li><router-link to="/">ARRIVALS</router-link></li>
-        <li><router-link to="/">SALE</router-link></li>
+        <li><router-link to="/" id="sales">SALE</router-link></li>
       </ul>
 
       <div class="img_div branding">
@@ -34,23 +34,35 @@
         <li><router-link to="/">STORES</router-link></li>
         <li>
           <router-link to="/">
-            <img src="../assets/serach-icon.svg" alt="search-icon" />
+            <i class="fa-solid fa-magnifying-glass" style="color: #212a2f"></i>
           </router-link>
         </li>
         <li>
           <router-link to="/">
-            <!-- <img src="../assets/serach-icon.svg" alt="search-icon" /> -->
+            <i class="fa-regular fa-user" style="color: #212a2f"></i>
           </router-link>
         </li>
         <li>
-          <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
+          <router-link to="/">
+            <i class="fa-regular fa-circle-question" style="color: #212a2f"></i>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/">
+            <i class="fa-solid fa-cart-plus" style="color: #212a2f"></i>
+          </router-link>
         </li>
       </ul>
 
       <div class="mobile-icons" v-show="mobile">
         <li>
           <router-link to="/">
-            <img src="../assets/serach-icon.svg" alt="search-icon" />
+            <i class="fa-solid fa-magnifying-glass" style="color: #212a2f"></i>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/">
+            <i class="fa-solid fa-cart-plus" style="color: #212a2f"></i>
           </router-link>
         </li>
       </div>
@@ -59,14 +71,18 @@
     <!-- mobile navigation -->
     <transition name="mobile-nav">
       <ul class="dropdown-nav" v-show="mobileNav">
-        <li><router-link to="/men">MEN</router-link></li>
+        <li>
+          <router-link to="/"> MEN </router-link>
+        </li>
         <li><router-link to="/">WOMEN</router-link></li>
         <li><router-link to="/">KIDS</router-link></li>
         <li><router-link to="/">ARRIVALS</router-link></li>
-        <li><router-link to="/">SALE</router-link></li>
+        <li><router-link to="/" id="sales">SALE</router-link></li>
         <li><router-link to="/">SUSTAINABILITY</router-link></li>
         <li><router-link to="/">RERUN</router-link></li>
         <li><router-link to="/">STORES</router-link></li>
+        <li><router-link to="/" class="acc">Account</router-link></li>
+        <li><router-link to="/" class>Help</router-link></li>
       </ul>
     </transition>
   </header>
@@ -83,21 +99,43 @@ export default {
       mobile: false,
       windowWidth: null,
       mobileNav: false,
+      scrollAd: true,
     };
   },
+  created() {
+    window.addEventListener("resize", this.checkScreen);
+    this.checkScreen();
+
+    window.addEventListener("scroll", this.scrollNav);
+    this.scrollNav();
+  },
   methods: {
-    toggleMobileNav(mobileNav) {
-      this.mobileNav = mobileNav;
+    toggleMobileNav() {
+      this.mobileNav = !this.mobileNav;
+    },
+    checkScreen() {
+      this.windowWidth = window.innerWidth;
+      if (this.windowWidth <= 1124) {
+        this.mobile = true;
+        return;
+      }
+      this.mobile = false;
+      this.mobileNav = false;
+      return;
+    },
+    scrollNav() {
+      this.scrollAd = window.scrollY;
+      if (this.scrollAd >= 200) {
+        this.scrollAd = false;
+        return;
+      }
+      this.scrollAd = true;
     },
   },
 };
 </script>
 
 <style scoped>
-/* nav a.router-link-exact-active {
-  color: #42b983;
-} */
-
 .Navbar {
   position: fixed;
   width: 100%;
@@ -111,11 +149,8 @@ nav {
   background-color: #fff;
   margin: auto 0;
   padding: 10px;
-  overflow-x: scroll;
 }
-.Navbar::-webkit-scrollbar {
-  width: 2rem;
-}
+
 nav ul {
   display: flex;
   gap: 2rem;
@@ -125,8 +160,8 @@ nav ul {
 }
 nav ul li {
   list-style: none;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 nav ul li a {
   text-decoration: none;
@@ -162,22 +197,63 @@ li a img {
 .icon-active {
   transform: rotate(180deg);
 }
+#hamburger {
+  margin-left: 1rem;
+}
+i {
+  font-size: 24px;
+  cursor: pointer;
+}
+
 .dropdown-nav {
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  padding: 10px;
-  gap: 2rem;
+  padding-top: 1rem;
+  gap: 1rem;
   width: 100vw;
   height: 100vh;
+  overflow-y: scroll;
 }
 .dropdown-nav li {
-  margin-left: 1rem;
-  border-bottom: 1px solid #212a2f;
+  list-style: none;
+  border-bottom: 1px solid rgb(50, 50, 50, 0.4);
+  padding-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.dropdown-nav li a {
+  display: flex;
+  align-items: center;
+}
+.mobile-icons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.mobile-icons li {
   list-style: none;
 }
 .dropdown-nav li a {
-  color: #212a2f;
+  color: #000;
   text-decoration: none;
+  margin: 0 0 0 1.5rem;
+  width: 100%;
+}
+#sales {
+  color: #ad1f00;
+}
+.mobile-nav-enter-active,
+.mobile-nav-leave-active {
+  transition: 1s ease all;
+}
+.mobile-nav-enter-from {
+  height: 0;
+}
+.mobile-nav-leave-to {
+  height: 0;
+}
+.mobile-nav-enter-to {
+  height: 100;
 }
 </style>
