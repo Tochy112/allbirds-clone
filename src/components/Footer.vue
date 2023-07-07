@@ -8,19 +8,18 @@
         and lots of other fun updates.
       </p>
       <div class="form">
-        <form>
-          <input
-            type="email"
-            placeholder="Enter Your Email Address"
-            name="email"
-            :v-model="email"
-            :value="email"
-          />
-          <Button content="SIGN UP" id="btn" bgcolor="#212a2f" color="#fff" />
+        <input
+          type="email"
+          placeholder="Enter Your Email Address"
+          name="email"
+          :v-model="email"
+        />
 
-          <button>SIGN UP</button>
-        </form>
+        <Button content="SIGN UP" id="btn" bgcolor="#212a2f" color="#fff" />
+
+        <button>SIGN UP</button>
       </div>
+
       <p class="policy">
         Note: You can opt-out at any time. See our
         <a href="#">Privacy Policy</a> and <a href="#">Terms</a>.
@@ -139,13 +138,13 @@ export default {
   background-color: #f8f7f5;
   padding: 2rem 0.5rem;
 }
-.footer-header form {
+.footer-header .form {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 }
-.footer-header form input {
+.footer-header .form input {
   height: 3rem;
   padding: 0 1rem;
   width: 30rem;
