@@ -193,13 +193,12 @@ li a img {
 /* mobile styling */
 #hamburger {
   transition: 0.8s ease all;
+  margin-left: 1rem;
 }
 .icon-active {
   transform: rotate(180deg);
 }
-#hamburger {
-  margin-left: 1rem;
-}
+
 i {
   font-size: 24px;
   cursor: pointer;
@@ -222,10 +221,10 @@ i {
   font-size: 0.9rem;
   font-weight: 600;
 }
-.dropdown-nav li a {
+/* .dropdown-nav li a {
   display: flex;
   align-items: center;
-}
+} */
 .mobile-icons {
   display: flex;
   gap: 0.5rem;
