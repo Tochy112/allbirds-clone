@@ -1,5 +1,5 @@
 # allbirds
-
+live URL: https://allbirds-clone.netlify.app/
 ## Project setup
 ```
 npm install
